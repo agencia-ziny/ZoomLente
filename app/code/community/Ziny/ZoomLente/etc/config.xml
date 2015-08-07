@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Zoom com Lente
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ *
+ * @category   Ziny
+ * @package    ComprarFlutuante
+ * @copyright  Copyright (c) 2015 Agência Ziny (www.agenciaziny.com.br)
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @author     Agência Ziny <dev@agenciaziny.com.br>
+ */
+-->
+<config>
+    <modules>
+        <Ziny_ZoomLente>
+            <version>1.0.0</version>
+        </Ziny_ZoomLente>
+    </modules>
+    <frontend>
+        <routers>
+            <zoomlente>
+                <use>standard</use>
+                <args>
+                    <module>Ziny_ZoomLente</module>
+                    <frontName>zoomlente</frontName>
+                </args>
+            </zoomlente>
+        </routers>
+        <translate>
+            <modules>
+                <Ziny_ZoomLente>
+                    <files>
+                        <default>Ziny_ZoomLente.csv</default>
+                    </files>
+                </Ziny_ZoomLente>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <zoomlente>
+                    <file>ziny/zoomlente.xml</file>
+                </zoomlente>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Ziny_ZoomLente>
+                    <files>
+                        <default>Ziny_ZoomLente.csv</default>
+                    </files>
+                </Ziny_ZoomLente>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <zoomlente>
+                    <file>ziny/zoomlente.xml</file>
+                </zoomlente>
+            </updates>
+        </layout>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <Ziny_ZoomLente>
+                            <title>Zoom with Lens</title>
+                            <sort_order>202</sort_order>
+                        </Ziny_ZoomLente>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <zoomlente translate="title" module="zoomlente">
+                                            <title>Zoom with Lens</title>
+                                            <sort_order>202</sort_order>
+                                        </zoomlente>			
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml> 
+    <global>
+        <blocks>
+            <zoomlente>
+                <class>Ziny_ZoomLente_Block</class>
+            </zoomlente>
+        </blocks> 
+        <helpers>
+            <zoomlente>
+                <class>Ziny_ZoomLente_Helper</class>
+            </zoomlente>
+        </helpers>
+        <models>
+            <zoomlente>
+                <class>Ziny_ZoomLente_Model</class>
+            </zoomlente>
+        </models>
+    </global>
+    <default>
+        <zoomlente>
+            <geral>
+                <ativo>0</ativo>
+                <borda_cor>FFFFFF</borda_cor>
+                <borda_tamanho>7</borda_tamanho>
+                <transparencia>.85</transparencia>
+                <tipo>circulo</tipo>
+                <tamanho>175px</tamanho>
+            </geral>
+        </zoomlente>
+    </default>
+    <admin>
+        <routers>
+            <zoomlente>
+                <use>admin</use>
+                <args>
+                    <module>Ziny_ZoomLente</module>
+                    <frontName>zoomlente</frontName>
+                </args>
+            </zoomlente>
+        </routers>
+    </admin>
+</config>
