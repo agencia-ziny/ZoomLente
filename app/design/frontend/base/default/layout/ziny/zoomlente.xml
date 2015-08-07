@@ -17,7 +17,7 @@
  * @author     Agência Ziny <dev@agenciaziny.com.br>
  */
 -->
-<layout version="1.0.0">
+<layout version="1.1.0">
     <catalog_product_view>
         <reference name="head">
             <action method="addJs" ifconfig="zoomlente/geral/ativo">
@@ -31,5 +31,30 @@
                 <name>js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js</name>
             </action>
         </reference>
+        <reference name="product.info.media">
+            <action method="setTemplate" ifconfig="zoomlente/geral/ativo">
+                <template>ziny/zoomlente/media.phtml</template>
+            </action>
+        </reference>
     </catalog_product_view>
+    
+    <review_product_list translate="label">
+        <reference name="head">
+            <action method="addJs" ifconfig="zoomlente/geral/ativo">
+                <script>ziny/zoomlente/geral.js</script>
+            </action>
+            <action method="addCss" ifconfig="zoomlente/geral/ativo">
+                <stylesheet>ziny/zoomlente/css/geral.css.php</stylesheet>
+            </action>
+            <action method="removeItem">
+                <type>skin_js</type>
+                <name>js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js</name>
+            </action>
+        </reference>
+        <reference name="product.info.media">
+            <action method="setTemplate" ifconfig="zoomlente/geral/ativo">
+                <template>ziny/comprarflutuante/media.phtml</template>
+            </action>
+        </reference>
+    </review_product_list>
 </layout>

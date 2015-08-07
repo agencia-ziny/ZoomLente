@@ -23,7 +23,10 @@ $j(function () {
             _b = 0,
             _c,
             _d,
-            _e = $j('.product-img-box').find('img').eq(0),
+            _k,
+            _e = $j('._lente-itens-galeria').find('._visivel'),
+            _v = $j('._lente-itens-galeria'),
+            _u = $j('._lente-reduzida'),
             _x = {
                 _h: _e
             },
@@ -35,7 +38,7 @@ $j(function () {
     if (_x._h.length) {
 
         var div = document.createElement('div');
-        div.setAttribute('class', '_zoomlente');
+        div.setAttribute('class', '_zoom-lente');
         _x._f = $j(div);
 
         $j('body').append(div);
@@ -48,17 +51,12 @@ $j(function () {
         mouse.x = e.pageX - _c_offset.left;
         mouse.y = e.pageY - _c_offset.top;
 
-        if (
-                mouse.x < _d.width() &&
-                mouse.y < _d.height() &&
-                mouse.x > 0 &&
-                mouse.y > 0
-                ) {
+        if (mouse.x < _d.width() && mouse.y < _d.height() && mouse.x > 0 && mouse.y > 0) {
 
             _c(e);
         }
         else {
-            _x._f.fadeOut(100);
+            _x._f.fadeOut('fast');
         }
 
         return;
@@ -86,7 +84,7 @@ $j(function () {
         return;
     };
 
-    _e.on('mousemove', function () {
+    _v.on('mousemove', '._visivel', function () {
 
         _x._f.fadeIn(100);
 
@@ -123,7 +121,7 @@ $j(function () {
             _o.src = src;
 
             return;
-            
+
         } else {
 
             _a = _d.data('largura');
@@ -133,6 +131,22 @@ $j(function () {
         _movimento.apply(this, arguments);
 
         _x._f.on('mousemove', _movimento);
+    });
+
+    _u.on('click', function (e) {
+
+        e.preventDefault();
+
+        _u.removeClass('_reduzida-atual');
+
+        _k = $j(this).addClass('_reduzida-atual').data('imagem-zoom');
+
+        _v.find('._visivel').fadeOut(function () {
+
+            _v.html('<img src="' + _k + '" class="_visivel">');
+
+            $j(this).remove();
+        });
     });
 
     _x._f.on('mouseout', function () {

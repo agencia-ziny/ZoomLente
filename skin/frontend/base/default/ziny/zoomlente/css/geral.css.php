@@ -30,7 +30,26 @@ $helper = Mage::helper('zoomlente/cor');
 
 header("Content-type: text/css; charset: UTF-8");
 ?>
-._zoomlente {
+
+._lente-produto-imagem {
+    margin-bottom: 10px;
+    position: relative;
+    display: block;
+    border: 1px solid #ededed;
+}
+._lente-itens-galeria {
+    position: relative;
+}
+._lente-itens-galeria img {
+    max-width: 100%;
+    max-height: 750px;
+    margin: 0px auto;
+    display: none;
+}
+._lente-itens-galeria img._visivel {
+    display:block
+}
+._zoom-lente {
     width: <?php echo $config['tamanho']; ?>;
     height: <?php echo $config['tamanho']; ?>;
     position: absolute;
@@ -40,4 +59,22 @@ header("Content-type: text/css; charset: UTF-8");
     <?php endif; ?>
     box-shadow: 0 0 0 <?php echo $config['borda_tamanho']; ?>px rgba(<?php echo $helper->rgb2Hex($config['borda_cor']); ?>,<?php echo $config['transparencia']; ?>), 0 0 <?php echo $config['borda_tamanho']; ?>px <?php echo $config['borda_tamanho']; ?>px rgba(0, 0, 0, .25), inset 0 0 40px 2px rgba(0, 0, 0, .25);
     display: none;
+    z-index:999999
+}
+._lente-imagens-reduzidas li:first-child {
+    margin-left: -1px;
+}
+._lente-imagens-reduzidas li {
+    display: inline-block;
+}
+._lente-imagens-reduzidas span {
+    display: inline-block;
+    cursor:pointer;
+    border: 1px solid transparent;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+._lente-imagens-reduzidas span:hover, ._lente-imagens-reduzidas span._reduzida-atual {
+    border:1px solid #c7c7c7 !important;
 }
