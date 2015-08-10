@@ -1,4 +1,4 @@
-# [Zoom with Lens](http://www.magentocommerce.com/magento-connect/zoom-with-lens.html)
+# [Magento Extension: Zoom with Lens](http://www.magentocommerce.com/magento-connect/zoom-with-lens.html)
 ###How about the chance to see the product up close? And more, with a fully customizable magnifying glass?
 
 The zoom on products we see today are ugly, and generally disrupt the layout of the store. So our team has developed an extension that will help a lot in view of their products!
